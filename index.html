@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEURAL Live</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --fg: #172033;
+      --muted: #647084;
+      --line: #d9dee8;
+      --soft: #f5f7fb;
+      --ok: #0b7a44;
+      --warn: #a65f00;
+      --bad: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--fg);
+      background: #fff;
+    }
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 28px auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.1;
+      margin: 0 0 8px;
+      letter-spacing: 0;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .state {
+      min-width: 142px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 10px 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      padding: 14px;
+      min-height: 94px;
+      background: #fff;
+    }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+    .value {
+      font-size: 27px;
+      line-height: 1.15;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+    .bar {
+      height: 12px;
+      border: 1px solid var(--line);
+      background: #eef2f7;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    .bar > div {
+      height: 100%;
+      width: 0%;
+      background: #1c6bff;
+      transition: width .25s ease;
+    }
+    .panel {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 14px;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 12px;
+      color: #25314a;
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      header { align-items: flex-start; flex-direction: column; }
+      .state { width: 100%; }
+    }
+    @media (max-width: 520px) {
+      main { width: min(100vw - 20px, 1180px); margin-top: 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .value { font-size: 23px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>NEURAL Live Training</h1>
+        <div class="sub" id="updated">status bekleniyor</div>
+      </div>
+      <div class="state" id="state">starting</div>
+    </header>
+
+    <div class="bar"><div id="bar"></div></div>
+
+    <section class="grid">
+      <div class="metric"><div class="label">Global Step</div><div class="value" id="global_step">-</div><div class="small" id="run_step">-</div></div>
+      <div class="metric"><div class="label">Remaining</div><div class="value" id="remaining">-</div><div class="small" id="eta">-</div></div>
+      <div class="metric"><div class="label">Accuracy</div><div class="value" id="accuracy">-</div><div class="small">action accuracy</div></div>
+      <div class="metric"><div class="label">Loss</div><div class="value" id="loss">-</div><div class="small" id="loss_parts">-</div></div>
+      <div class="metric"><div class="label">Reasoning Loss</div><div class="value" id="reasoning_loss">-</div><div class="small">19-class reasoning head</div></div>
+      <div class="metric"><div class="label">GPU</div><div class="value" id="gpu">-</div><div class="small" id="vram">-</div></div>
+      <div class="metric"><div class="label">Dataset</div><div class="value" id="dataset">18.05M</div><div class="small">records/timestamps</div></div>
+      <div class="metric"><div class="label">Checkpoint</div><div class="value" id="checkpoint">-</div><div class="small">latest training save</div></div>
+    </section>
+
+    <section class="panel">
+      <pre id="raw">{}</pre>
+    </section>
+  </main>
+
+  <script>
+    const fmt = new Intl.NumberFormat("tr-TR");
+    const pct = (v) => Number.isFinite(Number(v)) ? `${(Number(v) * 100).toFixed(2)}%` : "-";
+    const num = (v, d = 4) => Number.isFinite(Number(v)) ? Number(v).toFixed(d) : "-";
+    const int = (v) => Number.isFinite(Number(v)) ? fmt.format(Number(v)) : "-";
+
+    function set(id, value) {
+      document.getElementById(id).textContent = value;
+    }
+
+    async function refresh() {
+      try {
+        const response = await fetch(`status.json?t=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const s = await response.json();
+        const progress = Number(s.progress_pct ?? ((s.local_step && s.expected_steps) ? s.local_step / s.expected_steps * 100 : 0));
+        set("state", s.state || "running");
+        set("updated", `guncelleme: ${s.source_updated_at || s.generated_at || "-"}`);
+        set("global_step", int(s.global_step));
+        set("run_step", `${int(s.local_step)} / ${int(s.expected_steps)}`);
+        set("remaining", int(s.remaining_steps));
+        set("eta", Number.isFinite(Number(s.eta_hours)) ? `ETA ${Number(s.eta_hours).toFixed(2)} saat` : "-");
+        set("accuracy", pct(s.accuracy));
+        set("loss", num(s.loss, 4));
+        set("loss_parts", `action ${num(s.action_loss, 4)} | outcome ${num(s.outcome_loss, 4)}`);
+        set("reasoning_loss", num(s.reasoning_loss, 4));
+        set("gpu", `${num(s.gpu_utilization_pct, 0)}% | ${num(s.gpu_temperature_c, 0)}C`);
+        set("vram", `${int(s.gpu_memory_used_mb)} / ${int(s.gpu_memory_total_mb)} MB`);
+        set("checkpoint", s.checkpoint_step ? `step ${int(s.checkpoint_step)}` : "-");
+        document.getElementById("bar").style.width = `${Math.max(0, Math.min(100, progress || 0))}%`;
+        set("raw", JSON.stringify(s, null, 2));
+      } catch (err) {
+        set("state", "waiting");
+        set("updated", `status okunamadi: ${err.message}`);
+      }
+    }
+    refresh();
+    setInterval(refresh, 10000);
+  </script>
+</body>
+</html>

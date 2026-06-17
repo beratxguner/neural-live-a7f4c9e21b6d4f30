@@ -1,0 +1,21 @@
+{
+  "state": "starting",
+  "training_name": "cnc_1dk_general_direct",
+  "global_step": 56500,
+  "local_step": 0,
+  "expected_steps": 28554,
+  "remaining_steps": 28554,
+  "progress_pct": 0,
+  "accuracy": 0,
+  "loss": 0,
+  "action_loss": 0,
+  "outcome_loss": 0,
+  "reasoning_loss": 0,
+  "gpu_utilization_pct": 0,
+  "gpu_memory_used_mb": 0,
+  "gpu_memory_total_mb": 15360,
+  "gpu_temperature_c": 0,
+  "checkpoint_step": 56500,
+  "dataset_records": 18054469,
+  "generated_at": "2026-06-17T00:00:00Z"
+}
