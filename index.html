@@ -160,9 +160,11 @@
 
     async function refresh() {
       try {
-        const response = await fetch(`https://raw.githubusercontent.com/beratxguner/neural-live-a7f4c9e21b6d4f30/main/status.json?t=${Date.now()}`, { cache: "no-store" });
+        const response = await fetch(`https://api.github.com/repos/beratxguner/neural-live-a7f4c9e21b6d4f30/contents/status.json?ref=main&t=${Date.now()}`, { cache: "no-store" });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const s = await response.json();
+        const payload = await response.json();
+        const decoded = atob(String(payload.content || "").replace(/\s+/g, ""));
+        const s = JSON.parse(decoded);
         const progress = Number(s.progress_pct ?? ((s.local_step && s.expected_steps) ? s.local_step / s.expected_steps * 100 : 0));
         set("state", s.state || "running");
         set("updated", `guncelleme: ${s.source_updated_at || s.generated_at || "-"}`);
@@ -185,7 +187,7 @@
       }
     }
     refresh();
-    setInterval(refresh, 10000);
+    setInterval(refresh, 60000);
   </script>
 </body>
 </html>
