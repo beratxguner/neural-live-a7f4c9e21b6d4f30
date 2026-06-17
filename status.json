@@ -11,7 +11,7 @@
   "global_step": 64500,
   "gpu_memory_total_mb": 15360.0,
   "gpu_memory_used_mb": 1048.0,
-  "gpu_temperature_c": 50.0,
+  "gpu_temperature_c": 49.0,
   "gpu_utilization_pct": 0.0,
   "local_step": 8000,
   "log_dir": "mega_continual_20260617_151523_cnc1dk_direct",
@@ -22,7 +22,7 @@
   "remaining_steps": 20554,
   "reward_loss": 0.010445667257062754,
   "shard": 17,
-  "source_updated_at": "2026-06-17T20:56:37Z",
+  "source_updated_at": "2026-06-17T20:57:43Z",
   "state": "running",
   "tag_loss": 0.1688166529561131,
   "training_name": "cnc_1dk_general_direct"
