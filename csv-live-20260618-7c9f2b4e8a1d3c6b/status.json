@@ -3,62 +3,65 @@
   "config": "configs/generalmechanic_rl_t4.yaml",
   "current": {
     "action": "continue_operation",
-    "confidence": 0.5,
-    "downtime_minutes": 0.2907191812992096,
-    "failure_probability": 0.28857046365737915,
+    "confidence": 1.0,
+    "context_guardrail": "spindle_spinup_inertia_peak_not_thermal",
+    "downtime_minutes": 0.05,
+    "failure_probability": 0.08,
     "features": {
-      "acceleration_tracking_error": 78.6,
-      "axis_acceleration_activity": 78.6,
-      "axis_position_error_mm": 10.0,
-      "axis_velocity_error": 0.12999999999999456,
-      "current_risk": 0.33519999999999994,
-      "dc_bus_signal_mean": 0.2668,
+      "acceleration_tracking_error": 38.49,
+      "axis_acceleration_activity": 38.49,
+      "axis_position_error_mm": 0.0,
+      "axis_velocity_error": 0.04999999999999982,
+      "current_risk": 0.24697000000000002,
+      "dc_bus_signal_mean": 0.27555,
       "feed_rate_cmd": 6.0,
-      "local_risk": 1.0,
-      "motion_risk": 1.0,
+      "local_risk": 0.04939400000000001,
+      "motion_risk": 0.025660000000000002,
       "planned_axis_acceleration_activity": 0.0,
       "rapid_positioning": 0.0,
       "sequence_number": 70.0,
-      "servo_current_mean": 8.379999999999999,
+      "servo_current_mean": 6.174250000000001,
       "servo_output_current_max": 326.0,
-      "spindle_actual_velocity": 53.2,
+      "spindle_actual_velocity": 53.3,
       "spindle_command_velocity": 53.3,
-      "spindle_current_feedback": 26.9,
-      "spindle_load_pct": 25.139999999999997,
-      "spindle_output_power_raw": 0.178,
-      "spindle_output_voltage": 121.0,
-      "spindle_power_kw": 0.17938273999999998,
-      "spindle_power_risk": 0.11866666666666666,
+      "spindle_current_feedback": 19.6,
+      "spindle_load_pct": 18.522750000000002,
+      "spindle_output_power_raw": 0.19,
+      "spindle_output_voltage": 119.0,
+      "spindle_power_kw": 0.19122327,
+      "spindle_power_risk": 0.12666666666666668,
       "spindle_startup_transient": 1.0,
-      "vibration_proxy": 0.052399999999999995,
-      "x_current_feedback": 5.57,
-      "y_current_feedback": 1.05,
+      "vibration_proxy": 0.025660000000000002,
+      "x_current_feedback": 4.89,
+      "y_current_feedback": 0.207,
       "z_current_feedback": 0.0
     },
     "machining_process": "Layer 2 Up",
-    "reasoning_class": "thermal",
-    "reasoning_confidence": 0.5567,
-    "reasoning_text": "Karar: continue_operation. tahmini failure_probability=0.289; downtime skoru=0.291",
-    "row": 523,
+    "model_raw_action": "continue_operation",
+    "model_raw_reasoning_class": "thermal",
+    "reasoning_class": "normal",
+    "reasoning_confidence": 0.926,
+    "reasoning_text": "Karar: continue_operation. Spindle spin-up evresinde S1 voltaj/güç kalkışı normal atalet rampası; S1_OutputVoltage=119.00, S1_OutputPower=0.190, spindle hız=53.30, risk=0.049. Kesim yükü, soğutma veya sürdürülebilir termal bozulma kanıtı olmadığı için check_coolant_system/thermal alarmı verilmedi.",
+    "row": 524,
     "telemetry": [
-      0.25139999999999996,
-      0.008969136999999999,
-      1.0,
-      1.0,
-      0.0012999999999999457,
-      0.052399999999999995
+      0.18522750000000002,
+      0.0095611635,
+      0.04939400000000001,
+      0.0,
+      0.0004999999999999983,
+      0.025660000000000002
     ],
-    "timestamp_sec": 1566.0,
+    "timestamp_sec": 1569.0,
     "top_actions": [
-      {
-        "action": 15,
-        "name": "check_coolant_system",
-        "prob": 0.5
-      },
       {
         "action": 0,
         "name": "continue_operation",
-        "prob": 0.5
+        "prob": 1.0
+      },
+      {
+        "action": 15,
+        "name": "check_coolant_system",
+        "prob": 0.0
       },
       {
         "action": 3,
@@ -77,9 +80,88 @@
       }
     ]
   },
-  "elapsed_sec": 1589.1,
-  "estimated_remaining_sec": 1596.0,
+  "elapsed_sec": 1592.2,
+  "estimated_remaining_sec": 1593.0,
   "history": [
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "context_guardrail": "spindle_spinup_inertia_peak_not_thermal",
+      "downtime_minutes": 0.05,
+      "failure_probability": 0.08,
+      "features": {
+        "acceleration_tracking_error": 38.49,
+        "axis_acceleration_activity": 38.49,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.04999999999999982,
+        "current_risk": 0.24697000000000002,
+        "dc_bus_signal_mean": 0.27555,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.04939400000000001,
+        "motion_risk": 0.025660000000000002,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 70.0,
+        "servo_current_mean": 6.174250000000001,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 19.6,
+        "spindle_load_pct": 18.522750000000002,
+        "spindle_output_power_raw": 0.19,
+        "spindle_output_voltage": 119.0,
+        "spindle_power_kw": 0.19122327,
+        "spindle_power_risk": 0.12666666666666668,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.025660000000000002,
+        "x_current_feedback": 4.89,
+        "y_current_feedback": 0.207,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 2 Up",
+      "model_raw_action": "continue_operation",
+      "model_raw_reasoning_class": "thermal",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.926,
+      "reasoning_text": "Karar: continue_operation. Spindle spin-up evresinde S1 voltaj/güç kalkışı normal atalet rampası; S1_OutputVoltage=119.00, S1_OutputPower=0.190, spindle hız=53.30, risk=0.049. Kesim yükü, soğutma veya sürdürülebilir termal bozulma kanıtı olmadığı için check_coolant_system/thermal alarmı verilmedi.",
+      "row": 524,
+      "telemetry": [
+        0.18522750000000002,
+        0.0095611635,
+        0.04939400000000001,
+        0.0,
+        0.0004999999999999983,
+        0.025660000000000002
+      ],
+      "timestamp_sec": 1569.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "continue_operation",
       "confidence": 0.5,
@@ -6302,93 +6384,14 @@
           "prob": 0.0
         }
       ]
-    },
-    {
-      "action": "continue_operation",
-      "confidence": 1.0,
-      "context_guardrail": "spindle_spinup_inertia_peak_not_thermal",
-      "downtime_minutes": 0.05,
-      "failure_probability": 0.08,
-      "features": {
-        "acceleration_tracking_error": 185.799999046,
-        "axis_acceleration_activity": 185.8,
-        "axis_position_error_mm": 0.09999999999999432,
-        "axis_velocity_error": 0.3750000000000012,
-        "current_risk": 0.31495999999999996,
-        "dc_bus_signal_mean": 0.268675,
-        "feed_rate_cmd": 6.0,
-        "local_risk": 0.12386666603066668,
-        "motion_risk": 0.12386666603066668,
-        "planned_axis_acceleration_activity": 9.54e-07,
-        "rapid_positioning": 0.0,
-        "sequence_number": 63.0,
-        "servo_current_mean": 7.874,
-        "servo_output_current_max": 326.0,
-        "spindle_actual_velocity": 53.4,
-        "spindle_command_velocity": 53.3,
-        "spindle_current_feedback": 22.5,
-        "spindle_load_pct": 23.622,
-        "spindle_output_power_raw": 0.168,
-        "spindle_output_voltage": 119.0,
-        "spindle_power_kw": 0.1700444,
-        "spindle_power_risk": 0.112,
-        "spindle_startup_transient": 1.0,
-        "vibration_proxy": 0.12386666603066668,
-        "x_current_feedback": 0.656,
-        "y_current_feedback": 8.34,
-        "z_current_feedback": 0.0
-      },
-      "machining_process": "Layer 2 Up",
-      "model_raw_action": "continue_operation",
-      "model_raw_reasoning_class": "thermal",
-      "reasoning_class": "normal",
-      "reasoning_confidence": 0.9,
-      "reasoning_text": "Karar: continue_operation. Spindle spin-up evresinde S1 voltaj/güç kalkışı normal atalet rampası; S1_OutputVoltage=119.00, S1_OutputPower=0.168, spindle hız=53.40, risk=0.124. Kesim yükü, soğutma veya sürdürülebilir termal bozulma kanıtı olmadığı için check_coolant_system/thermal alarmı verilmedi.",
-      "row": 444,
-      "telemetry": [
-        0.23621999999999999,
-        0.008502220000000001,
-        0.12386666603066668,
-        0.009999999999999431,
-        0.003750000000000012,
-        0.12386666603066668
-      ],
-      "timestamp_sec": 1329.0,
-      "top_actions": [
-        {
-          "action": 0,
-          "name": "continue_operation",
-          "prob": 1.0
-        },
-        {
-          "action": 15,
-          "name": "check_coolant_system",
-          "prob": 0.0
-        },
-        {
-          "action": 3,
-          "name": "shutdown_component",
-          "prob": 0.0
-        },
-        {
-          "action": 2,
-          "name": "decrease_power",
-          "prob": 0.0
-        },
-        {
-          "action": 1,
-          "name": "increase_power",
-          "prob": 0.0
-        }
-      ]
     }
   ],
   "interval_sec": 3.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 49.57,
-  "row": 523,
+  "progress_pct": 49.67,
+  "row": 524,
   "source_file": "experiment_01.csv",
   "state": "running",
   "total_rows": 1055,
-  "updated_at": "2026-06-18T12:47:20Z"
+  "updated_at": "2026-06-18T12:47:23Z"
 }
