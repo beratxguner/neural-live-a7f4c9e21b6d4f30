@@ -12,7 +12,7 @@
   "gpu_memory_total_mb": 15360.0,
   "gpu_memory_used_mb": 2092.0,
   "gpu_temperature_c": 49.0,
-  "gpu_utilization_pct": 0.0,
+  "gpu_utilization_pct": 17.0,
   "local_step": 2250,
   "log_dir": "generalmechanic_rl50_20260618_092551_generalmechanic_rl50",
   "loss": -0.08620198677707877,
@@ -22,7 +22,7 @@
   "remaining_steps": 4916,
   "reward_loss": 0.07951234577973891,
   "shard": 1,
-  "source_updated_at": "2026-06-18T12:04:46Z",
+  "source_updated_at": "2026-06-18T12:05:52Z",
   "state": "running",
   "tag_loss": 0.11844092422102888,
   "training_name": "generalmechanic_rl50_20260618_092551_generalmechanic_rl50"
