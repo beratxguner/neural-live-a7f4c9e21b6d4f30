@@ -22,7 +22,7 @@
   "remaining_steps": 3122,
   "reward_loss": 0.0016602873369960475,
   "shard": 5,
-  "source_updated_at": "2026-06-18T09:25:33Z",
+  "source_updated_at": "2026-06-18T09:26:39Z",
   "state": "running",
   "tag_loss": 0.07089397439787795,
   "training_name": "mach_w_supervised_100_20260618_075914_mach_w_supervised_100"
