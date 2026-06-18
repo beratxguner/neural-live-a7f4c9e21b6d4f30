@@ -3,27 +3,27 @@
   "config": "configs/generalmechanic_rl_t4.yaml",
   "current": {
     "action": "shutdown_component",
-    "confidence": 0.4994047284126282,
+    "confidence": 0.5,
     "context_guardrail": "x_axis_current_hard_interlock_shutdown",
     "downtime_minutes": 1.0,
     "failure_probability": 0.95,
     "features": {
       "acceleration_tracking_error": 0.0,
       "axis_acceleration_activity": 0.0,
-      "axis_drive_risk": 0.7783333333333334,
-      "axis_output_voltage_max": 117.0,
+      "axis_drive_risk": 1.0,
+      "axis_output_voltage_max": 124.8,
       "axis_position_error_mm": 0.0,
       "axis_velocity_error": 0.0,
       "current_risk": 0.22,
       "dc_bus_signal_mean": 0.0,
       "feed_rate_cmd": 6.0,
-      "local_risk": 0.6615833333333334,
+      "local_risk": 0.85,
       "motion_risk": 0.0,
       "planned_axis_acceleration_activity": 0.0,
       "rapid_positioning": 0.0,
       "sequence_number": 0.0,
       "servo_current_mean": 5.5,
-      "servo_output_current_max": 470.1,
+      "servo_output_current_max": 512.6,
       "spindle_actual_velocity": 53.3,
       "spindle_command_velocity": 53.3,
       "spindle_current_feedback": 22.0,
@@ -36,10 +36,10 @@
       "vibration_proxy": 0.0,
       "x_axis_trend_risk": 1.0,
       "x_current_feedback": 0.0,
-      "x_output_current": 470.1,
-      "x_output_current_slope_5s": 25.150000000000006,
-      "x_output_voltage": 95.2,
-      "x_output_voltage_slope_5s": 15.775,
+      "x_output_current": 512.6,
+      "x_output_current_slope_5s": 31.85000000000001,
+      "x_output_voltage": 124.8,
+      "x_output_voltage_slope_5s": 20.825,
       "y_current_feedback": 0.0,
       "z_current_feedback": 0.0
     },
@@ -48,36 +48,36 @@
     "model_raw_reasoning_class": "normal",
     "reasoning_class": "electrical_power",
     "reasoning_confidence": 0.98,
-    "reasoning_text": "Karar: shutdown_component. X1_OutputCurrent=470.1A kritik 400A interlock sınırını aştı; X1_OutputVoltage=95.2, 5s akım eğimi=25.15A/s. Operatör manuel kontrolü güvenli değil; X ekseni sürücü/motoru korumak için bileşen acil durdurulmalı.",
-    "row": 19,
+    "reasoning_text": "Karar: shutdown_component. X1_OutputCurrent=512.6A kritik 400A interlock sınırını aştı; X1_OutputVoltage=124.8, 5s akım eğimi=31.85A/s. Operatör manuel kontrolü güvenli değil; X ekseni sürücü/motoru korumak için bileşen acil durdurulmalı.",
+    "row": 20,
     "telemetry": [
       0.165,
       0.009,
-      0.6615833333333334,
+      0.85,
       0.0,
       0.0,
       0.0
     ],
-    "timestamp_sec": 18.0,
+    "timestamp_sec": 19.0,
     "top_actions": [
       {
         "action": 0,
         "name": "continue_operation",
-        "prob": 0.4994
-      },
-      {
-        "action": 10,
-        "name": "escalate_to_supervisor",
-        "prob": 0.4994
+        "prob": 0.5
       },
       {
         "action": 15,
         "name": "check_coolant_system",
-        "prob": 0.0012
+        "prob": 0.5
       },
       {
-        "action": 7,
-        "name": "recalibrate_sensor",
+        "action": 10,
+        "name": "escalate_to_supervisor",
+        "prob": 0.0
+      },
+      {
+        "action": 2,
+        "name": "decrease_power",
         "prob": 0.0
       },
       {
@@ -87,9 +87,95 @@
       }
     ]
   },
-  "elapsed_sec": 24.8,
-  "estimated_remaining_sec": 1.0,
+  "elapsed_sec": 27.8,
+  "estimated_remaining_sec": 0.0,
   "history": [
+    {
+      "action": "shutdown_component",
+      "confidence": 0.5,
+      "context_guardrail": "x_axis_current_hard_interlock_shutdown",
+      "downtime_minutes": 1.0,
+      "failure_probability": 0.95,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_drive_risk": 1.0,
+        "axis_output_voltage_max": 124.8,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.85,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 512.6,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_axis_trend_risk": 1.0,
+        "x_current_feedback": 0.0,
+        "x_output_current": 512.6,
+        "x_output_current_slope_5s": 31.85000000000001,
+        "x_output_voltage": 124.8,
+        "x_output_voltage_slope_5s": 20.825,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "continue_operation",
+      "model_raw_reasoning_class": "normal",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.98,
+      "reasoning_text": "Karar: shutdown_component. X1_OutputCurrent=512.6A kritik 400A interlock sınırını aştı; X1_OutputVoltage=124.8, 5s akım eğimi=31.85A/s. Operatör manuel kontrolü güvenli değil; X ekseni sürücü/motoru korumak için bileşen acil durdurulmalı.",
+      "row": 20,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.85,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 19.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.5
+        },
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "shutdown_component",
       "confidence": 0.4994047284126282,
@@ -1727,10 +1813,10 @@
   ],
   "interval_sec": 1.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 95.0,
-  "row": 19,
+  "progress_pct": 100.0,
+  "row": 20,
   "source_file": "custom_x1_voltage_ramp_probe.csv",
   "state": "running",
   "total_rows": 20,
-  "updated_at": "2026-06-18T13:14:32Z"
+  "updated_at": "2026-06-18T13:14:35Z"
 }
