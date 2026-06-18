@@ -42,7 +42,7 @@
     "reasoning_class": "normal",
     "reasoning_confidence": 0.9,
     "reasoning_text": "Karar: continue_operation. Prep evresinde planlı eksen konumlanması var; pozisyon hatası 0.000 mm, hız hatası 0.026, vibration proxy 0.004. Bu ivme komutlu hareket olduğu için vibration_acoustic arızası sayılmadı.",
-    "row": 4,
+    "row": 5,
     "telemetry": [
       0.020550000000000002,
       3.2600000000000003e-07,
@@ -51,7 +51,7 @@
       0.0002575,
       0.0035766666666666664
     ],
-    "timestamp_sec": 3.0,
+    "timestamp_sec": 4.0,
     "top_actions": [
       {
         "action": 23,
@@ -59,13 +59,13 @@
         "prob": 1.0
       },
       {
-        "action": 15,
-        "name": "check_coolant_system",
+        "action": 0,
+        "name": "continue_operation",
         "prob": 0.0
       },
       {
-        "action": 0,
-        "name": "continue_operation",
+        "action": 15,
+        "name": "check_coolant_system",
         "prob": 0.0
       },
       {
@@ -80,9 +80,88 @@
       }
     ]
   },
-  "elapsed_sec": 9.7,
-  "estimated_remaining_sec": 1664.0,
+  "elapsed_sec": 12.6,
+  "estimated_remaining_sec": 1663.0,
   "history": [
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "context_guardrail": "planned_rapid_acceleration_not_vibration",
+      "downtime_minutes": 0.05,
+      "failure_probability": 0.08,
+      "features": {
+        "acceleration_tracking_error": 6.438,
+        "axis_acceleration_activity": 6.438,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.025750000000000002,
+        "current_risk": 0.0274,
+        "dc_bus_signal_mean": 1.3675000000000001e-19,
+        "feed_rate_cmd": 50.0,
+        "local_risk": 0.00685,
+        "motion_risk": 0.0035766666666666664,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 1.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 0.685,
+        "servo_output_current_max": 333.0,
+        "spindle_actual_velocity": 0.00075,
+        "spindle_command_velocity": 0.0,
+        "spindle_current_feedback": -1.17,
+        "spindle_load_pct": 2.055,
+        "spindle_output_power_raw": 6.29e-06,
+        "spindle_output_voltage": 0.0,
+        "spindle_power_kw": 6.52e-06,
+        "spindle_power_risk": 7.8625e-06,
+        "spindle_startup_transient": 0.0,
+        "vibration_proxy": 0.0035766666666666664,
+        "x_current_feedback": -0.23,
+        "y_current_feedback": -1.34,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Prep",
+      "model_raw_action": "manual_inspection",
+      "model_raw_reasoning_class": "thermal",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.9,
+      "reasoning_text": "Karar: continue_operation. Prep evresinde planlı eksen konumlanması var; pozisyon hatası 0.000 mm, hız hatası 0.026, vibration proxy 0.004. Bu ivme komutlu hareket olduğu için vibration_acoustic arızası sayılmadı.",
+      "row": 5,
+      "telemetry": [
+        0.020550000000000002,
+        3.2600000000000003e-07,
+        0.00685,
+        0.0,
+        0.0002575,
+        0.0035766666666666664
+      ],
+      "timestamp_sec": 4.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "continue_operation",
       "confidence": 1.0,
@@ -402,10 +481,10 @@
   ],
   "interval_sec": 1.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 0.24,
-  "row": 4,
+  "progress_pct": 0.3,
+  "row": 5,
   "source_file": "experiment_02.csv",
   "state": "running",
   "total_rows": 1668,
-  "updated_at": "2026-06-18T12:54:55Z"
+  "updated_at": "2026-06-18T12:54:58Z"
 }
