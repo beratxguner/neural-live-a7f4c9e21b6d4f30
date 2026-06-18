@@ -2,28 +2,28 @@
   "checkpoint": "latest",
   "config": "configs/generalmechanic_rl_t4.yaml",
   "current": {
-    "action": "schedule_downtime",
-    "confidence": 0.5,
-    "context_guardrail": "x_axis_rising_current_early_warning",
-    "downtime_minutes": 0.47630131244659424,
-    "failure_probability": 0.4670313894748688,
+    "action": "shutdown_component",
+    "confidence": 0.4994047284126282,
+    "context_guardrail": "x_axis_current_hard_interlock_shutdown",
+    "downtime_minutes": 1.0,
+    "failure_probability": 0.95,
     "features": {
       "acceleration_tracking_error": 0.0,
       "axis_acceleration_activity": 0.0,
-      "axis_drive_risk": 0.11888888888888877,
+      "axis_drive_risk": 0.7783333333333334,
       "axis_output_voltage_max": 117.0,
       "axis_position_error_mm": 0.0,
       "axis_velocity_error": 0.0,
       "current_risk": 0.22,
       "dc_bus_signal_mean": 0.0,
       "feed_rate_cmd": 6.0,
-      "local_risk": 0.55,
+      "local_risk": 0.6615833333333334,
       "motion_risk": 0.0,
       "planned_axis_acceleration_activity": 0.0,
       "rapid_positioning": 0.0,
       "sequence_number": 0.0,
       "servo_current_mean": 5.5,
-      "servo_output_current_max": 351.4,
+      "servo_output_current_max": 470.1,
       "spindle_actual_velocity": 53.3,
       "spindle_command_velocity": 53.3,
       "spindle_current_feedback": 22.0,
@@ -36,10 +36,10 @@
       "vibration_proxy": 0.0,
       "x_axis_trend_risk": 1.0,
       "x_current_feedback": 0.0,
-      "x_output_current": 351.4,
-      "x_output_current_slope_5s": 5.049999999999997,
-      "x_output_voltage": 22.0,
-      "x_output_voltage_slope_5s": 2.375,
+      "x_output_current": 470.1,
+      "x_output_current_slope_5s": 25.150000000000006,
+      "x_output_voltage": 95.2,
+      "x_output_voltage_slope_5s": 15.775,
       "y_current_feedback": 0.0,
       "z_current_feedback": 0.0
     },
@@ -47,37 +47,37 @@
     "model_raw_action": "continue_operation",
     "model_raw_reasoning_class": "normal",
     "reasoning_class": "electrical_power",
-    "reasoning_confidence": 0.88,
-    "reasoning_text": "Karar: schedule_downtime. X1_OutputCurrent henüz kritik değil fakat yükselen trend başladı; akım=351.4A, voltaj=22.0, 5s akım eğimi=5.05A/s, 5s voltaj eğimi=2.38/s. Erken X ekseni drive/servo stres uyarısı.",
-    "row": 13,
+    "reasoning_confidence": 0.98,
+    "reasoning_text": "Karar: shutdown_component. X1_OutputCurrent=470.1A kritik 400A interlock sınırını aştı; X1_OutputVoltage=95.2, 5s akım eğimi=25.15A/s. Operatör manuel kontrolü güvenli değil; X ekseni sürücü/motoru korumak için bileşen acil durdurulmalı.",
+    "row": 19,
     "telemetry": [
       0.165,
       0.009,
-      0.55,
+      0.6615833333333334,
       0.0,
       0.0,
       0.0
     ],
-    "timestamp_sec": 12.0,
+    "timestamp_sec": 18.0,
     "top_actions": [
       {
         "action": 0,
         "name": "continue_operation",
-        "prob": 0.5
+        "prob": 0.4994
+      },
+      {
+        "action": 10,
+        "name": "escalate_to_supervisor",
+        "prob": 0.4994
       },
       {
         "action": 15,
         "name": "check_coolant_system",
-        "prob": 0.5
+        "prob": 0.0012
       },
       {
         "action": 7,
         "name": "recalibrate_sensor",
-        "prob": 0.0
-      },
-      {
-        "action": 2,
-        "name": "decrease_power",
         "prob": 0.0
       },
       {
@@ -87,9 +87,525 @@
       }
     ]
   },
-  "elapsed_sec": 16.7,
-  "estimated_remaining_sec": 7.0,
+  "elapsed_sec": 24.8,
+  "estimated_remaining_sec": 1.0,
   "history": [
+    {
+      "action": "shutdown_component",
+      "confidence": 0.4994047284126282,
+      "context_guardrail": "x_axis_current_hard_interlock_shutdown",
+      "downtime_minutes": 1.0,
+      "failure_probability": 0.95,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_drive_risk": 0.7783333333333334,
+        "axis_output_voltage_max": 117.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.6615833333333334,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 470.1,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_axis_trend_risk": 1.0,
+        "x_current_feedback": 0.0,
+        "x_output_current": 470.1,
+        "x_output_current_slope_5s": 25.150000000000006,
+        "x_output_voltage": 95.2,
+        "x_output_voltage_slope_5s": 15.775,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "continue_operation",
+      "model_raw_reasoning_class": "normal",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.98,
+      "reasoning_text": "Karar: shutdown_component. X1_OutputCurrent=470.1A kritik 400A interlock sınırını aştı; X1_OutputVoltage=95.2, 5s akım eğimi=25.15A/s. Operatör manuel kontrolü güvenli değil; X ekseni sürücü/motoru korumak için bileşen acil durdurulmalı.",
+      "row": 19,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.6615833333333334,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 18.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.4994
+        },
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 0.4994
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.0012
+        },
+        {
+          "action": 7,
+          "name": "recalibrate_sensor",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "shutdown_component",
+      "confidence": 0.5,
+      "context_guardrail": "x_axis_current_hard_interlock_shutdown",
+      "downtime_minutes": 1.0,
+      "failure_probability": 0.95,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_drive_risk": 0.5855555555555554,
+        "axis_output_voltage_max": 117.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.55,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 435.4,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_axis_trend_risk": 1.0,
+        "x_current_feedback": 0.0,
+        "x_output_current": 435.4,
+        "x_output_current_slope_5s": 19.349999999999994,
+        "x_output_voltage": 72.4,
+        "x_output_voltage_slope_5s": 11.775000000000002,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "escalate_to_supervisor",
+      "model_raw_reasoning_class": "normal",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.98,
+      "reasoning_text": "Karar: shutdown_component. X1_OutputCurrent=435.4A kritik 400A interlock sınırını aştı; X1_OutputVoltage=72.4, 5s akım eğimi=19.35A/s. Operatör manuel kontrolü güvenli değil; X ekseni sürücü/motoru korumak için bileşen acil durdurulmalı.",
+      "row": 18,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.55,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 17.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 0.5
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.0
+        },
+        {
+          "action": 7,
+          "name": "recalibrate_sensor",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "shutdown_component",
+      "confidence": 0.5,
+      "context_guardrail": "x_axis_current_hard_interlock_shutdown",
+      "downtime_minutes": 1.0,
+      "failure_probability": 0.95,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_drive_risk": 0.43333333333333335,
+        "axis_output_voltage_max": 117.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.55,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 408.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_axis_trend_risk": 1.0,
+        "x_current_feedback": 0.0,
+        "x_output_current": 408.0,
+        "x_output_current_slope_5s": 14.150000000000006,
+        "x_output_voltage": 55.0,
+        "x_output_voltage_slope_5s": 8.25,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "continue_operation",
+      "model_raw_reasoning_class": "normal",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.98,
+      "reasoning_text": "Karar: shutdown_component. X1_OutputCurrent=408.0A kritik 400A interlock sınırını aştı; X1_OutputVoltage=55.0, 5s akım eğimi=14.15A/s. Operatör manuel kontrolü güvenli değil; X ekseni sürücü/motoru korumak için bileşen acil durdurulmalı.",
+      "row": 17,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.55,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 16.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 0.5
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.0
+        },
+        {
+          "action": 7,
+          "name": "recalibrate_sensor",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 0.5,
+      "context_guardrail": "x_axis_current_escalation_threshold",
+      "downtime_minutes": 0.5613635182380676,
+      "failure_probability": 0.5573333333333333,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_drive_risk": 0.3066666666666666,
+        "axis_output_voltage_max": 117.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.55,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 385.2,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_axis_trend_risk": 1.0,
+        "x_current_feedback": 0.0,
+        "x_output_current": 385.2,
+        "x_output_current_slope_5s": 9.825000000000003,
+        "x_output_voltage": 41.5,
+        "x_output_voltage_slope_5s": 5.525,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "continue_operation",
+      "model_raw_reasoning_class": "normal",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.94,
+      "reasoning_text": "Karar: escalate_to_supervisor. X1_OutputCurrent=385.2A, 360A escalation sınırını geçti; X1_OutputVoltage=41.5, axis_drive_risk=0.307. Trend X ekseni servo/drive zorlanmasına gidiyor; üretim sürdürülmeden yetkili müdahalesi gerekli.",
+      "row": 16,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.55,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 15.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.5
+        },
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 0.0
+        },
+        {
+          "action": 7,
+          "name": "recalibrate_sensor",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 0.5,
+      "context_guardrail": "x_axis_current_escalation_threshold",
+      "downtime_minutes": 0.5119624733924866,
+      "failure_probability": 0.5268055555555555,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_drive_risk": 0.21944444444444444,
+        "axis_output_voltage_max": 117.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.55,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 369.5,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_axis_trend_risk": 1.0,
+        "x_current_feedback": 0.0,
+        "x_output_current": 369.5,
+        "x_output_current_slope_5s": 7.299999999999997,
+        "x_output_voltage": 32.1,
+        "x_output_voltage_slope_5s": 3.825,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "check_coolant_system",
+      "model_raw_reasoning_class": "normal",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.94,
+      "reasoning_text": "Karar: escalate_to_supervisor. X1_OutputCurrent=369.5A, 360A escalation sınırını geçti; X1_OutputVoltage=32.1, axis_drive_risk=0.219. Trend X ekseni servo/drive zorlanmasına gidiyor; üretim sürdürülmeden yetkili müdahalesi gerekli.",
+      "row": 15,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.55,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 14.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.5
+        },
+        {
+          "action": 7,
+          "name": "recalibrate_sensor",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "schedule_downtime",
+      "confidence": 0.5,
+      "context_guardrail": "x_axis_rising_current_early_warning",
+      "downtime_minutes": 0.49596989154815674,
+      "failure_probability": 0.48648619651794434,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_drive_risk": 0.15555555555555556,
+        "axis_output_voltage_max": 117.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.55,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 358.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_axis_trend_risk": 1.0,
+        "x_current_feedback": 0.0,
+        "x_output_current": 358.0,
+        "x_output_current_slope_5s": 5.75,
+        "x_output_voltage": 25.3,
+        "x_output_voltage_slope_5s": 2.8000000000000003,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "check_coolant_system",
+      "model_raw_reasoning_class": "normal",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.88,
+      "reasoning_text": "Karar: schedule_downtime. X1_OutputCurrent henüz kritik değil fakat yükselen trend başladı; akım=358.0A, voltaj=25.3, 5s akım eğimi=5.75A/s, 5s voltaj eğimi=2.80/s. Erken X ekseni drive/servo stres uyarısı.",
+      "row": 14,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.55,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 13.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.5
+        },
+        {
+          "action": 7,
+          "name": "recalibrate_sensor",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "schedule_downtime",
       "confidence": 0.5,
@@ -1211,10 +1727,10 @@
   ],
   "interval_sec": 1.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 65.0,
-  "row": 13,
+  "progress_pct": 95.0,
+  "row": 19,
   "source_file": "custom_x1_voltage_ramp_probe.csv",
   "state": "running",
   "total_rows": 20,
-  "updated_at": "2026-06-18T13:14:24Z"
+  "updated_at": "2026-06-18T13:14:32Z"
 }
