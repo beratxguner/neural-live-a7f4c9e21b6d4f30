@@ -4,51 +4,51 @@
   "current": {
     "action": "continue_operation",
     "confidence": 0.5,
-    "downtime_minutes": 0.17058512568473816,
-    "failure_probability": 0.16836175322532654,
+    "downtime_minutes": 0.18127572536468506,
+    "failure_probability": 0.17852026224136353,
     "features": {
-      "acceleration_tracking_error": 60.739999999999995,
-      "axis_acceleration_activity": 69.75,
+      "acceleration_tracking_error": 118.410000954,
+      "axis_acceleration_activity": 127.65,
       "axis_position_error_mm": 0.0,
-      "axis_velocity_error": 0.2299999999999942,
-      "current_risk": 0.3154,
-      "dc_bus_signal_mean": 0.2994,
+      "axis_velocity_error": 0.3399999999999941,
+      "current_risk": 0.33990000000000004,
+      "dc_bus_signal_mean": 0.2732,
       "feed_rate_cmd": 6.0,
-      "local_risk": 0.14193,
-      "motion_risk": 0.04049333333333333,
-      "planned_axis_acceleration_activity": 9.01,
+      "local_risk": 0.152955,
+      "motion_risk": 0.078940000636,
+      "planned_axis_acceleration_activity": 10.180000954,
       "rapid_positioning": 0.0,
       "sequence_number": 15.0,
-      "servo_current_mean": 7.885,
+      "servo_current_mean": 8.4975,
       "servo_output_current_max": 326.0,
       "spindle_actual_velocity": 53.2,
       "spindle_command_velocity": 53.3,
-      "spindle_current_feedback": 23.2,
-      "spindle_load_pct": 23.655,
-      "spindle_output_power_raw": 0.201,
-      "spindle_output_voltage": 118.0,
-      "spindle_power_kw": 0.202266,
-      "spindle_power_risk": 0.25125,
+      "spindle_current_feedback": 24.3,
+      "spindle_load_pct": 25.4925,
+      "spindle_output_power_raw": 0.176,
+      "spindle_output_voltage": 121.0,
+      "spindle_power_kw": 0.177344,
+      "spindle_power_risk": 0.21999999999999997,
       "spindle_startup_transient": 0.0,
-      "vibration_proxy": 0.04049333333333333,
-      "x_current_feedback": -5.25,
-      "y_current_feedback": 3.09,
+      "vibration_proxy": 0.078940000636,
+      "x_current_feedback": -4.73,
+      "y_current_feedback": 4.96,
       "z_current_feedback": 0.0
     },
     "machining_process": "Layer 1 Up",
     "reasoning_class": "thermal",
-    "reasoning_confidence": 0.9123,
-    "reasoning_text": "Karar: continue_operation. tahmini failure_probability=0.168; downtime skoru=0.171",
-    "row": 43,
+    "reasoning_confidence": 0.923,
+    "reasoning_text": "Karar: continue_operation. tahmini failure_probability=0.179; downtime skoru=0.181",
+    "row": 45,
     "telemetry": [
-      0.23655,
-      0.0101133,
-      0.14193,
+      0.254925,
+      0.0088672,
+      0.152955,
       0.0,
-      0.0022999999999999423,
-      0.04049333333333333
+      0.003399999999999941,
+      0.078940000636
     ],
-    "timestamp_sec": 126.0,
+    "timestamp_sec": 132.0,
     "top_actions": [
       {
         "action": 15,
@@ -77,9 +77,161 @@
       }
     ]
   },
-  "elapsed_sec": 127.4,
-  "estimated_remaining_sec": 3036.0,
+  "elapsed_sec": 133.4,
+  "estimated_remaining_sec": 3030.0,
   "history": [
+    {
+      "action": "continue_operation",
+      "confidence": 0.5,
+      "downtime_minutes": 0.18127572536468506,
+      "failure_probability": 0.17852026224136353,
+      "features": {
+        "acceleration_tracking_error": 118.410000954,
+        "axis_acceleration_activity": 127.65,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.3399999999999941,
+        "current_risk": 0.33990000000000004,
+        "dc_bus_signal_mean": 0.2732,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.152955,
+        "motion_risk": 0.078940000636,
+        "planned_axis_acceleration_activity": 10.180000954,
+        "rapid_positioning": 0.0,
+        "sequence_number": 15.0,
+        "servo_current_mean": 8.4975,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.2,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 24.3,
+        "spindle_load_pct": 25.4925,
+        "spindle_output_power_raw": 0.176,
+        "spindle_output_voltage": 121.0,
+        "spindle_power_kw": 0.177344,
+        "spindle_power_risk": 0.21999999999999997,
+        "spindle_startup_transient": 0.0,
+        "vibration_proxy": 0.078940000636,
+        "x_current_feedback": -4.73,
+        "y_current_feedback": 4.96,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "thermal",
+      "reasoning_confidence": 0.923,
+      "reasoning_text": "Karar: continue_operation. tahmini failure_probability=0.179; downtime skoru=0.181",
+      "row": 45,
+      "telemetry": [
+        0.254925,
+        0.0088672,
+        0.152955,
+        0.0,
+        0.003399999999999941,
+        0.078940000636
+      ],
+      "timestamp_sec": 132.0,
+      "top_actions": [
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.5
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "check_coolant_system",
+      "confidence": 0.5,
+      "downtime_minutes": 0.1752488911151886,
+      "failure_probability": 0.1727917194366455,
+      "features": {
+        "acceleration_tracking_error": 89.420000954,
+        "axis_acceleration_activity": 92.25,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.3000000000000007,
+        "current_risk": 0.3331,
+        "dc_bus_signal_mean": 0.2716,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.149895,
+        "motion_risk": 0.05961333396933333,
+        "planned_axis_acceleration_activity": 9.670000954,
+        "rapid_positioning": 0.0,
+        "sequence_number": 15.0,
+        "servo_current_mean": 8.3275,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 23.1,
+        "spindle_load_pct": 24.9825,
+        "spindle_output_power_raw": 0.168,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.16953600000000002,
+        "spindle_power_risk": 0.21,
+        "spindle_startup_transient": 0.0,
+        "vibration_proxy": 0.05961333396933333,
+        "x_current_feedback": -3.16,
+        "y_current_feedback": 7.05,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "thermal",
+      "reasoning_confidence": 0.9077,
+      "reasoning_text": "Karar: check_coolant_system. tahmini failure_probability=0.173; downtime skoru=0.175",
+      "row": 44,
+      "telemetry": [
+        0.24982500000000002,
+        0.008476800000000001,
+        0.149895,
+        0.0,
+        0.003000000000000007,
+        0.05961333396933333
+      ],
+      "timestamp_sec": 129.0,
+      "top_actions": [
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.5
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.5
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "continue_operation",
       "confidence": 0.5,
@@ -3441,10 +3593,10 @@
   ],
   "interval_sec": 3.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 4.08,
-  "row": 43,
+  "progress_pct": 4.27,
+  "row": 45,
   "source_file": "experiment_01.csv",
   "state": "running",
   "total_rows": 1055,
-  "updated_at": "2026-06-18T12:10:26Z"
+  "updated_at": "2026-06-18T12:10:32Z"
 }
