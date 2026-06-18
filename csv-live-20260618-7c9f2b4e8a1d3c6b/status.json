@@ -3,40 +3,40 @@
   "config": "configs/generalmechanic_rl_t4.yaml",
   "current": {
     "action": "escalate_to_supervisor",
-    "confidence": 1.0,
-    "downtime_minutes": 0.5157986283302307,
-    "failure_probability": 0.5131388902664185,
+    "confidence": 0.9999998807907104,
+    "downtime_minutes": 0.5605127215385437,
+    "failure_probability": 0.5595360994338989,
     "features": {
-      "active_power_kw": 0.3422617,
-      "axis_acceleration_abs": 130.15,
-      "axis_position_error_mm": 2.0,
-      "axis_velocity_error": 0.7500000000000029,
-      "dc_bus_voltage_avg": 0.6835249999999999,
+      "active_power_kw": 0.177344,
+      "axis_acceleration_abs": 127.65,
+      "axis_position_error_mm": 0.0,
+      "axis_velocity_error": 0.3399999999999941,
+      "dc_bus_voltage_avg": 0.2732,
       "feedrate": 6.0,
-      "motor_current_a": 17.549775,
-      "motor_current_peak_a": 323.0,
-      "sequence_number": 14.0,
-      "spindle_actual_velocity": 35.9,
-      "spindle_command_velocity": 36.6,
-      "spindle_current_feedback": 62.0,
-      "x_current_feedback": -8.1,
-      "y_current_feedback": -0.0991,
+      "motor_current_a": 8.4975,
+      "motor_current_peak_a": 326.0,
+      "sequence_number": 15.0,
+      "spindle_actual_velocity": 53.2,
+      "spindle_command_velocity": 53.3,
+      "spindle_current_feedback": 24.3,
+      "x_current_feedback": -4.73,
+      "y_current_feedback": 4.96,
       "z_current_feedback": 0.0
     },
     "machining_process": "Layer 1 Up",
-    "reasoning_class": "vibration_acoustic",
-    "reasoning_confidence": 0.3826,
-    "reasoning_text": "Karar: escalate_to_supervisor. tahmini failure_probability=0.513; downtime skoru=0.516",
-    "row": 34,
+    "reasoning_class": "electrical_power",
+    "reasoning_confidence": 0.8788,
+    "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+    "row": 45,
     "telemetry": [
       0.06,
-      2.0,
-      0.007500000000000029,
-      0.3509955,
-      0.646,
+      0.0,
+      0.003399999999999941,
+      0.16995000000000002,
+      0.652,
       10.0
     ],
-    "timestamp_sec": 99.0,
+    "timestamp_sec": 132.0,
     "top_actions": [
       {
         "action": 10,
@@ -44,30 +44,734 @@
         "prob": 1.0
       },
       {
-        "action": 2,
-        "name": "decrease_power",
-        "prob": 0.0
-      },
-      {
-        "action": 0,
-        "name": "continue_operation",
-        "prob": 0.0
-      },
-      {
         "action": 3,
         "name": "shutdown_component",
+        "prob": 0.0
+      },
+      {
+        "action": 2,
+        "name": "decrease_power",
         "prob": 0.0
       },
       {
         "action": 1,
         "name": "increase_power",
         "prob": 0.0
+      },
+      {
+        "action": 0,
+        "name": "continue_operation",
+        "prob": 0.0
       }
     ]
   },
-  "elapsed_sec": 99.7,
-  "estimated_remaining_sec": 3063.0,
+  "elapsed_sec": 132.8,
+  "estimated_remaining_sec": 3030.0,
   "history": [
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 0.9999998807907104,
+      "downtime_minutes": 0.5605127215385437,
+      "failure_probability": 0.5595360994338989,
+      "features": {
+        "active_power_kw": 0.177344,
+        "axis_acceleration_abs": 127.65,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.3399999999999941,
+        "dc_bus_voltage_avg": 0.2732,
+        "feedrate": 6.0,
+        "motor_current_a": 8.4975,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 15.0,
+        "spindle_actual_velocity": 53.2,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 24.3,
+        "x_current_feedback": -4.73,
+        "y_current_feedback": 4.96,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8788,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 45,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.003399999999999941,
+        0.16995000000000002,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 132.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 0.9999997615814209,
+      "downtime_minutes": 0.5621188282966614,
+      "failure_probability": 0.5611222982406616,
+      "features": {
+        "active_power_kw": 0.16953600000000002,
+        "axis_acceleration_abs": 92.25,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.3000000000000007,
+        "dc_bus_voltage_avg": 0.2716,
+        "feedrate": 6.0,
+        "motor_current_a": 8.3275,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 15.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 23.1,
+        "x_current_feedback": -3.16,
+        "y_current_feedback": 7.05,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8747,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 44,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.003000000000000007,
+        0.16655,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 129.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 0.9999992251396179,
+      "downtime_minutes": 0.5617521405220032,
+      "failure_probability": 0.5607638955116272,
+      "features": {
+        "active_power_kw": 0.202266,
+        "axis_acceleration_abs": 69.75,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.2299999999999942,
+        "dc_bus_voltage_avg": 0.2994,
+        "feedrate": 6.0,
+        "motor_current_a": 7.885,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 15.0,
+        "spindle_actual_velocity": 53.2,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 23.2,
+        "x_current_feedback": -5.25,
+        "y_current_feedback": 3.09,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8712,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 43,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.0022999999999999423,
+        0.1577,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 126.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 1.0,
+      "downtime_minutes": 0.5570876002311707,
+      "failure_probability": 0.5561255216598511,
+      "features": {
+        "active_power_kw": 0.1682404,
+        "axis_acceleration_abs": 50.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.15500000000000047,
+        "dc_bus_voltage_avg": 0.254325,
+        "feedrate": 6.0,
+        "motor_current_a": 8.2825,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 14.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 25.0,
+        "x_current_feedback": -4.75,
+        "y_current_feedback": 3.38,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8689,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 42,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.0015500000000000047,
+        0.16565000000000002,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 123.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 1.0,
+      "downtime_minutes": 0.559386670589447,
+      "failure_probability": 0.5583781003952026,
+      "features": {
+        "active_power_kw": 0.17354201,
+        "axis_acceleration_abs": 38.3,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.09999999999999964,
+        "dc_bus_voltage_avg": 0.271075,
+        "feedrate": 6.0,
+        "motor_current_a": 9.9975,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 14.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 27.0,
+        "x_current_feedback": -6.86,
+        "y_current_feedback": 6.13,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8569,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 41,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.0009999999999999966,
+        0.19995000000000002,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 120.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 1.0,
+      "downtime_minutes": 0.5585592985153198,
+      "failure_probability": 0.5575459003448486,
+      "features": {
+        "active_power_kw": 0.190040628,
+        "axis_acceleration_abs": 109.3,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.22500000000000017,
+        "dc_bus_voltage_avg": 0.27444999999999997,
+        "feedrate": 6.0,
+        "motor_current_a": 6.869999999999999,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 14.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 21.9,
+        "x_current_feedback": -3.92,
+        "y_current_feedback": 1.66,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8635,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 40,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.0022500000000000016,
+        0.1374,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 117.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 1.0,
+      "downtime_minutes": 0.5444616079330444,
+      "failure_probability": 0.5434014797210693,
+      "features": {
+        "active_power_kw": 0.16911030500000002,
+        "axis_acceleration_abs": 96.8,
+        "axis_position_error_mm": 1.0,
+        "axis_velocity_error": 0.2049999999999997,
+        "dc_bus_voltage_avg": 0.2459,
+        "feedrate": 6.0,
+        "motor_current_a": 7.12,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 14.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 20.6,
+        "x_current_feedback": -5.9,
+        "y_current_feedback": 1.98,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8058,
+      "reasoning_text": "Karar: escalate_to_supervisor. tahmini failure_probability=0.543; downtime skoru=0.544",
+      "row": 39,
+      "telemetry": [
+        0.06,
+        1.0,
+        0.002049999999999997,
+        0.1424,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 114.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 0.9563743472099304,
+      "downtime_minutes": 0.566085934638977,
+      "failure_probability": 0.5648993253707886,
+      "features": {
+        "active_power_kw": 0.177210169,
+        "axis_acceleration_abs": 47.8,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.14999999999999963,
+        "dc_bus_voltage_avg": 0.26355,
+        "feedrate": 6.0,
+        "motor_current_a": 8.685,
+        "motor_current_peak_a": 326.0,
+        "sequence_number": 2.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.8,
+        "x_current_feedback": -5.65,
+        "y_current_feedback": 6.29,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.8427,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 38,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.0014999999999999963,
+        0.17370000000000002,
+        0.652,
+        10.0
+      ],
+      "timestamp_sec": 111.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 0.9564
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0436
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 1.0,
+      "downtime_minutes": 0.5919027328491211,
+      "failure_probability": 0.5891541242599487,
+      "features": {
+        "active_power_kw": 0.23244,
+        "axis_acceleration_abs": 98.6,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.2199999999999946,
+        "dc_bus_voltage_avg": 0.338575,
+        "feedrate": 6.0,
+        "motor_current_a": 9.665000000000001,
+        "motor_current_peak_a": 325.0,
+        "sequence_number": 14.0,
+        "spindle_actual_velocity": 53.2,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 27.3,
+        "x_current_feedback": -5.99,
+        "y_current_feedback": -5.37,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.5749,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 37,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.002199999999999946,
+        0.19330000000000003,
+        0.65,
+        10.0
+      ],
+      "timestamp_sec": 108.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 1.0,
+      "downtime_minutes": 0.5744051337242126,
+      "failure_probability": 0.5711567997932434,
+      "features": {
+        "active_power_kw": 0.07578126,
+        "axis_acceleration_abs": 163.5,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.570000000000006,
+        "dc_bus_voltage_avg": 0.126975,
+        "feedrate": 6.0,
+        "motor_current_a": 4.305,
+        "motor_current_peak_a": 325.0,
+        "sequence_number": 14.0,
+        "spindle_actual_velocity": 53.7,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 9.37,
+        "x_current_feedback": -6.67,
+        "y_current_feedback": 1.18,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.4602,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 36,
+      "telemetry": [
+        0.06,
+        0.0,
+        0.005700000000000059,
+        0.0861,
+        0.65,
+        10.0
+      ],
+      "timestamp_sec": 105.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "escalate_to_supervisor",
+      "confidence": 1.0,
+      "downtime_minutes": 0.5379570126533508,
+      "failure_probability": 0.535137951374054,
+      "features": {
+        "active_power_kw": 0.44226355,
+        "axis_acceleration_abs": 187.6,
+        "axis_position_error_mm": 1.0,
+        "axis_velocity_error": 0.9000000000000032,
+        "dc_bus_voltage_avg": 0.69625,
+        "feedrate": 6.0,
+        "motor_current_a": 16.41,
+        "motor_current_peak_a": 322.0,
+        "sequence_number": 14.0,
+        "spindle_actual_velocity": 45.9,
+        "spindle_command_velocity": 46.6,
+        "spindle_current_feedback": 59.0,
+        "x_current_feedback": -6.42,
+        "y_current_feedback": 0.22,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "electrical_power",
+      "reasoning_confidence": 0.4241,
+      "reasoning_text": "Karar: escalate_to_supervisor. Makine arızası etiketi yüksek; plansız duruş riski belirgin.",
+      "row": 35,
+      "telemetry": [
+        0.06,
+        1.0,
+        0.009000000000000032,
+        0.3282,
+        0.644,
+        10.0
+      ],
+      "timestamp_sec": 102.0,
+      "top_actions": [
+        {
+          "action": 10,
+          "name": "escalate_to_supervisor",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "escalate_to_supervisor",
       "confidence": 1.0,
@@ -2247,10 +2951,10 @@
   ],
   "interval_sec": 3.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 3.22,
-  "row": 34,
+  "progress_pct": 4.27,
+  "row": 45,
   "source_file": "experiment_01.csv",
   "state": "running",
   "total_rows": 1055,
-  "updated_at": "2026-06-18T11:39:20Z"
+  "updated_at": "2026-06-18T11:39:53Z"
 }
