@@ -21,7 +21,7 @@
       "rapid_positioning": 0.0,
       "sequence_number": 0.0,
       "servo_current_mean": 5.5,
-      "servo_output_current_max": 351.4,
+      "servo_output_current_max": 358.0,
       "spindle_actual_velocity": 53.3,
       "spindle_command_velocity": 53.3,
       "spindle_current_feedback": 22.0,
@@ -40,9 +40,9 @@
     "model_raw_action": "continue_operation",
     "model_raw_reasoning_class": "thermal",
     "reasoning_class": "normal",
-    "reasoning_confidence": 0.9154,
+    "reasoning_confidence": 0.9172,
     "reasoning_text": "Karar: continue_operation. Spindle spin-up evresinde S1 voltaj/güç kalkışı normal atalet rampası; S1_OutputVoltage=117.00, S1_OutputPower=0.180, spindle hız=53.30, risk=0.044. Kesim yükü, soğutma veya sürdürülebilir termal bozulma kanıtı olmadığı için check_coolant_system/thermal alarmı verilmedi.",
-    "row": 13,
+    "row": 14,
     "telemetry": [
       0.165,
       0.009,
@@ -51,7 +51,7 @@
       0.0,
       0.0
     ],
-    "timestamp_sec": 12.0,
+    "timestamp_sec": 13.0,
     "top_actions": [
       {
         "action": 0,
@@ -80,9 +80,88 @@
       }
     ]
   },
-  "elapsed_sec": 36.9,
-  "estimated_remaining_sec": 7.0,
+  "elapsed_sec": 39.9,
+  "estimated_remaining_sec": 6.0,
   "history": [
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "context_guardrail": "spindle_spinup_inertia_peak_not_thermal",
+      "downtime_minutes": 0.05,
+      "failure_probability": 0.08,
+      "features": {
+        "acceleration_tracking_error": 0.0,
+        "axis_acceleration_activity": 0.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.0,
+        "current_risk": 0.22,
+        "dc_bus_signal_mean": 0.0,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.044000000000000004,
+        "motion_risk": 0.0,
+        "planned_axis_acceleration_activity": 0.0,
+        "rapid_positioning": 0.0,
+        "sequence_number": 0.0,
+        "servo_current_mean": 5.5,
+        "servo_output_current_max": 358.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 22.0,
+        "spindle_load_pct": 16.5,
+        "spindle_output_power_raw": 0.18,
+        "spindle_output_voltage": 117.0,
+        "spindle_power_kw": 0.18,
+        "spindle_power_risk": 0.12,
+        "spindle_startup_transient": 1.0,
+        "vibration_proxy": 0.0,
+        "x_current_feedback": 0.0,
+        "y_current_feedback": 0.0,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "model_raw_action": "continue_operation",
+      "model_raw_reasoning_class": "thermal",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.9172,
+      "reasoning_text": "Karar: continue_operation. Spindle spin-up evresinde S1 voltaj/güç kalkışı normal atalet rampası; S1_OutputVoltage=117.00, S1_OutputPower=0.180, spindle hız=53.30, risk=0.044. Kesim yükü, soğutma veya sürdürülebilir termal bozulma kanıtı olmadığı için check_coolant_system/thermal alarmı verilmedi.",
+      "row": 14,
+      "telemetry": [
+        0.165,
+        0.009,
+        0.044000000000000004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timestamp_sec": 13.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "continue_operation",
       "confidence": 1.0,
@@ -1113,10 +1192,10 @@
   ],
   "interval_sec": 1.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 65.0,
-  "row": 13,
+  "progress_pct": 70.0,
+  "row": 14,
   "source_file": "custom_x1_voltage_ramp_probe.csv",
   "state": "running",
   "total_rows": 20,
-  "updated_at": "2026-06-18T13:06:55Z"
+  "updated_at": "2026-06-18T13:06:58Z"
 }
