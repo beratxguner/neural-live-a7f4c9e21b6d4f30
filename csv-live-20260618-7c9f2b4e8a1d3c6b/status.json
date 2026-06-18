@@ -4,43 +4,43 @@
   "current": {
     "action": "manual_inspection",
     "confidence": 1.0,
-    "downtime_minutes": 0.2730056047439575,
-    "failure_probability": 0.27213603258132935,
+    "downtime_minutes": 0.27104881405830383,
+    "failure_probability": 0.2701787054538727,
     "features": {
-      "axis_acceleration_activity": 110.94999999999999,
+      "axis_acceleration_activity": 200.2,
       "axis_position_error_mm": 0.0,
-      "axis_velocity_error": 0.24999999999999556,
-      "current_risk": 0.7761904761904762,
-      "dc_bus_signal_mean": 0.3434,
+      "axis_velocity_error": 0.4499999999999945,
+      "current_risk": 0.7714285714285715,
+      "dc_bus_signal_mean": 0.290425,
       "feed_rate_cmd": 6.0,
-      "local_risk": 0.3492857142857143,
-      "motion_risk": 0.044379999999999996,
-      "sequence_number": 19.0,
-      "servo_current_mean": 9.16,
-      "servo_output_current_max": 326.0,
-      "spindle_actual_velocity": 53.1,
+      "local_risk": 0.34714285714285714,
+      "motion_risk": 0.08008,
+      "sequence_number": 2.0,
+      "servo_current_mean": 8.455,
+      "servo_output_current_max": 324.0,
+      "spindle_actual_velocity": 53.2,
       "spindle_command_velocity": 53.3,
-      "spindle_current_feedback": 27.8,
-      "spindle_load_pct": 81.5,
-      "spindle_power_kw": 0.230466,
-      "x_current_feedback": 6.11,
-      "y_current_feedback": -2.73,
+      "spindle_current_feedback": 25.3,
+      "spindle_load_pct": 81.0,
+      "spindle_power_kw": 0.1951199,
+      "x_current_feedback": 5.0,
+      "y_current_feedback": -3.52,
       "z_current_feedback": 0.0
     },
     "machining_process": "Layer 1 Up",
     "reasoning_class": "vibration_acoustic",
-    "reasoning_confidence": 0.5906,
-    "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.272; downtime skoru=0.273",
-    "row": 67,
+    "reasoning_confidence": 0.6016,
+    "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.270; downtime skoru=0.271",
+    "row": 78,
     "telemetry": [
-      0.815,
-      0.0115233,
-      0.3492857142857143,
+      0.81,
+      0.009755995,
+      0.34714285714285714,
       0.0,
-      0.0024999999999999554,
-      0.3664
+      0.004499999999999945,
+      0.3382
     ],
-    "timestamp_sec": 198.0,
+    "timestamp_sec": 231.0,
     "top_actions": [
       {
         "action": 23,
@@ -69,9 +69,757 @@
       }
     ]
   },
-  "elapsed_sec": 198.7,
-  "estimated_remaining_sec": 2964.0,
+  "elapsed_sec": 231.7,
+  "estimated_remaining_sec": 2931.0,
   "history": [
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.27104881405830383,
+      "failure_probability": 0.2701787054538727,
+      "features": {
+        "axis_acceleration_activity": 200.2,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.4499999999999945,
+        "current_risk": 0.7714285714285715,
+        "dc_bus_signal_mean": 0.290425,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.34714285714285714,
+        "motion_risk": 0.08008,
+        "sequence_number": 2.0,
+        "servo_current_mean": 8.455,
+        "servo_output_current_max": 324.0,
+        "spindle_actual_velocity": 53.2,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 25.3,
+        "spindle_load_pct": 81.0,
+        "spindle_power_kw": 0.1951199,
+        "x_current_feedback": 5.0,
+        "y_current_feedback": -3.52,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.6016,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.270; downtime skoru=0.271",
+      "row": 78,
+      "telemetry": [
+        0.81,
+        0.009755995,
+        0.34714285714285714,
+        0.0,
+        0.004499999999999945,
+        0.3382
+      ],
+      "timestamp_sec": 231.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.2741989195346832,
+      "failure_probability": 0.2733309268951416,
+      "features": {
+        "axis_acceleration_activity": 77.74,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.19500000000000028,
+        "current_risk": 0.7714285714285715,
+        "dc_bus_signal_mean": 0.29145,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.34714285714285714,
+        "motion_risk": 0.031096,
+        "sequence_number": 19.0,
+        "servo_current_mean": 6.9375,
+        "servo_output_current_max": 324.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 20.9,
+        "spindle_load_pct": 81.0,
+        "spindle_power_kw": 0.19713987,
+        "x_current_feedback": 3.63,
+        "y_current_feedback": -3.22,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.6037,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.273; downtime skoru=0.274",
+      "row": 77,
+      "telemetry": [
+        0.81,
+        0.0098569935,
+        0.34714285714285714,
+        0.0,
+        0.001950000000000003,
+        0.2775
+      ],
+      "timestamp_sec": 228.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.2741304636001587,
+      "failure_probability": 0.2732095420360565,
+      "features": {
+        "axis_acceleration_activity": 118.25,
+        "axis_position_error_mm": 1.0,
+        "axis_velocity_error": 0.22000000000000028,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.259225,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.125,
+        "sequence_number": 19.0,
+        "servo_current_mean": 7.8225,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 23.8,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.17015950000000002,
+        "x_current_feedback": 4.43,
+        "y_current_feedback": -3.06,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.6201,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.273; downtime skoru=0.274",
+      "row": 76,
+      "telemetry": [
+        0.815,
+        0.008507975000000001,
+        0.3492857142857143,
+        0.1,
+        0.0022000000000000027,
+        0.3129
+      ],
+      "timestamp_sec": 225.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.2751138210296631,
+      "failure_probability": 0.2742847800254822,
+      "features": {
+        "axis_acceleration_activity": 210.39999999999998,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.3199999999999946,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.2645,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.08415999999999998,
+        "sequence_number": 19.0,
+        "servo_current_mean": 7.875,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.2,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 23.4,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.17785299999999998,
+        "x_current_feedback": 4.11,
+        "y_current_feedback": -3.99,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.6149,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.274; downtime skoru=0.275",
+      "row": 75,
+      "telemetry": [
+        0.815,
+        0.008892649999999998,
+        0.3492857142857143,
+        0.0,
+        0.0031999999999999464,
+        0.315
+      ],
+      "timestamp_sec": 222.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.2739495038986206,
+      "failure_probability": 0.2731097340583801,
+      "features": {
+        "axis_acceleration_activity": 109.9,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.17499999999999982,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.25265,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.04396,
+        "sequence_number": 19.0,
+        "servo_current_mean": 7.0975,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 21.5,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.1688832,
+        "x_current_feedback": 3.84,
+        "y_current_feedback": -3.05,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.5946,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.273; downtime skoru=0.274",
+      "row": 74,
+      "telemetry": [
+        0.815,
+        0.008444160000000001,
+        0.3492857142857143,
+        0.0,
+        0.0017499999999999983,
+        0.2839
+      ],
+      "timestamp_sec": 219.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.273980051279068,
+      "failure_probability": 0.27315911650657654,
+      "features": {
+        "axis_acceleration_activity": 85.15,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.2450000000000001,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.2921,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.03406,
+        "sequence_number": 19.0,
+        "servo_current_mean": 7.5575,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 21.7,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.19322,
+        "x_current_feedback": 6.1,
+        "y_current_feedback": -2.43,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.6014,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.273; downtime skoru=0.274",
+      "row": 73,
+      "telemetry": [
+        0.815,
+        0.009661,
+        0.3492857142857143,
+        0.0,
+        0.0024500000000000012,
+        0.3023
+      ],
+      "timestamp_sec": 216.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.271892786026001,
+      "failure_probability": 0.27102330327033997,
+      "features": {
+        "axis_acceleration_activity": 123.92999999999999,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.2549999999999999,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.255575,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.049572,
+        "sequence_number": 19.0,
+        "servo_current_mean": 8.5925,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 25.2,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.1642305,
+        "x_current_feedback": 5.51,
+        "y_current_feedback": -3.66,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.5894,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.271; downtime skoru=0.272",
+      "row": 72,
+      "telemetry": [
+        0.815,
+        0.008211525,
+        0.3492857142857143,
+        0.0,
+        0.002549999999999999,
+        0.34369999999999995
+      ],
+      "timestamp_sec": 213.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.2747558057308197,
+      "failure_probability": 0.2738427519798279,
+      "features": {
+        "axis_acceleration_activity": 151.4,
+        "axis_position_error_mm": 1.0,
+        "axis_velocity_error": 0.3049999999999997,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.25645,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.125,
+        "sequence_number": 19.0,
+        "servo_current_mean": 8.2125,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 25.6,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.16805130000000001,
+        "x_current_feedback": 4.04,
+        "y_current_feedback": -3.21,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.6173,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.274; downtime skoru=0.275",
+      "row": 71,
+      "telemetry": [
+        0.815,
+        0.008402565,
+        0.3492857142857143,
+        0.1,
+        0.003049999999999997,
+        0.3285
+      ],
+      "timestamp_sec": 210.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.27595093846321106,
+      "failure_probability": 0.27510422468185425,
+      "features": {
+        "axis_acceleration_activity": 86.95,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.17499999999999982,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.282125,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.03478,
+        "sequence_number": 19.0,
+        "servo_current_mean": 7.369999999999999,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 21.4,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.1880805,
+        "x_current_feedback": 4.7,
+        "y_current_feedback": -3.38,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.5899,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.275; downtime skoru=0.276",
+      "row": 70,
+      "telemetry": [
+        0.815,
+        0.009404025,
+        0.3492857142857143,
+        0.0,
+        0.0017499999999999983,
+        0.29479999999999995
+      ],
+      "timestamp_sec": 207.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.2685491144657135,
+      "failure_probability": 0.267551451921463,
+      "features": {
+        "axis_acceleration_activity": 1091.9,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 2.6750000000000003,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.29155,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.43676000000000004,
+        "motion_risk": 0.43676000000000004,
+        "sequence_number": 19.0,
+        "servo_current_mean": 10.4375,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.3,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 20.5,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.1714329,
+        "x_current_feedback": 17.1,
+        "y_current_feedback": -4.15,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.6338,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.268; downtime skoru=0.269",
+      "row": 69,
+      "telemetry": [
+        0.815,
+        0.008571645,
+        0.43676000000000004,
+        0.0,
+        0.026750000000000003,
+        0.4175
+      ],
+      "timestamp_sec": 204.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "manual_inspection",
+      "confidence": 1.0,
+      "downtime_minutes": 0.2733263671398163,
+      "failure_probability": 0.2724785804748535,
+      "features": {
+        "axis_acceleration_activity": 77.3,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.373000000000001,
+        "current_risk": 0.7761904761904762,
+        "dc_bus_signal_mean": 0.26055,
+        "feed_rate_cmd": 6.0,
+        "local_risk": 0.3492857142857143,
+        "motion_risk": 0.03092,
+        "sequence_number": 2.0,
+        "servo_current_mean": 7.1225,
+        "servo_output_current_max": 326.0,
+        "spindle_actual_velocity": 53.4,
+        "spindle_command_velocity": 53.3,
+        "spindle_current_feedback": 21.2,
+        "spindle_load_pct": 81.5,
+        "spindle_power_kw": 0.172319,
+        "x_current_feedback": 4.21,
+        "y_current_feedback": -3.08,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Layer 1 Up",
+      "reasoning_class": "vibration_acoustic",
+      "reasoning_confidence": 0.5936,
+      "reasoning_text": "Karar: manual_inspection. tahmini failure_probability=0.272; downtime skoru=0.273",
+      "row": 68,
+      "telemetry": [
+        0.815,
+        0.00861595,
+        0.3492857142857143,
+        0.0,
+        0.00373000000000001,
+        0.2849
+      ],
+      "timestamp_sec": 201.0,
+      "top_actions": [
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 1.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "manual_inspection",
       "confidence": 1.0,
@@ -4631,10 +5379,10 @@
   ],
   "interval_sec": 3.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 6.35,
-  "row": 67,
+  "progress_pct": 7.39,
+  "row": 78,
   "source_file": "experiment_01.csv",
   "state": "running",
   "total_rows": 1055,
-  "updated_at": "2026-06-18T11:54:36Z"
+  "updated_at": "2026-06-18T11:55:09Z"
 }
