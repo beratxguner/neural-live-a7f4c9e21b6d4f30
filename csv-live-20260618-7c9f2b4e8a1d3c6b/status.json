@@ -1816,7 +1816,7 @@
   "progress_pct": 100.0,
   "row": 20,
   "source_file": "custom_x1_voltage_ramp_probe.csv",
-  "state": "running",
+  "state": "complete",
   "total_rows": 20,
-  "updated_at": "2026-06-18T13:14:35Z"
+  "updated_at": "2026-06-18T13:14:38Z"
 }
