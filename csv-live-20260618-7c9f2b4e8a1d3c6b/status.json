@@ -4,39 +4,39 @@
   "current": {
     "action": "continue_operation",
     "confidence": 1.0,
-    "downtime_minutes": 0.32175785303115845,
-    "failure_probability": 0.31841737031936646,
+    "downtime_minutes": 0.4721425175666809,
+    "failure_probability": 0.4696817696094513,
     "features": {
-      "active_power_kw": 2.759e-06,
-      "axis_acceleration_abs": 6.5,
-      "axis_position_error_mm": 0.0,
-      "axis_velocity_error": 0.026000000000000002,
-      "dc_bus_voltage_avg": 0.00935,
+      "active_power_kw": 0.01604,
+      "axis_acceleration_abs": 99.95,
+      "axis_position_error_mm": 1.0,
+      "axis_velocity_error": 0.3999999999999986,
+      "dc_bus_voltage_avg": 0.07350000000000001,
       "feedrate": 50.0,
-      "motor_current_a": 0.31075,
-      "motor_current_peak_a": 329.0,
-      "sequence_number": 0.0,
-      "spindle_actual_velocity": 0.001,
+      "motor_current_a": 4.11275,
+      "motor_current_peak_a": 328.0,
+      "sequence_number": 7.0,
+      "spindle_actual_velocity": 0.0,
       "spindle_command_velocity": 0.0,
-      "spindle_current_feedback": 0.524,
-      "x_current_feedback": 0.18,
-      "y_current_feedback": 0.539,
+      "spindle_current_feedback": 0.821,
+      "x_current_feedback": -5.85,
+      "y_current_feedback": -9.78,
       "z_current_feedback": 0.0
     },
-    "machining_process": "Starting",
+    "machining_process": "Prep",
     "reasoning_class": "normal",
-    "reasoning_confidence": 0.556,
+    "reasoning_confidence": 0.876,
     "reasoning_text": "Karar: continue_operation. Telemetri normal operasyonla uyumlu; arıza ve duruş riski düşük görünüyor.",
-    "row": 1,
+    "row": 6,
     "telemetry": [
       0.5,
-      0.0,
-      0.00026000000000000003,
-      0.006215000000000001,
-      0.658,
-      0.002759
+      1.0,
+      0.003999999999999986,
+      0.08225500000000001,
+      0.656,
+      10.0
     ],
-    "timestamp_sec": 0.0,
+    "timestamp_sec": 15.0,
     "top_actions": [
       {
         "action": 0,
@@ -65,9 +65,329 @@
       }
     ]
   },
-  "elapsed_sec": 0.6,
-  "estimated_remaining_sec": 3162.0,
+  "elapsed_sec": 15.6,
+  "estimated_remaining_sec": 3147.0,
   "history": [
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "downtime_minutes": 0.4721425175666809,
+      "failure_probability": 0.4696817696094513,
+      "features": {
+        "active_power_kw": 0.01604,
+        "axis_acceleration_abs": 99.95,
+        "axis_position_error_mm": 1.0,
+        "axis_velocity_error": 0.3999999999999986,
+        "dc_bus_voltage_avg": 0.07350000000000001,
+        "feedrate": 50.0,
+        "motor_current_a": 4.11275,
+        "motor_current_peak_a": 328.0,
+        "sequence_number": 7.0,
+        "spindle_actual_velocity": 0.0,
+        "spindle_command_velocity": 0.0,
+        "spindle_current_feedback": 0.821,
+        "x_current_feedback": -5.85,
+        "y_current_feedback": -9.78,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Prep",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.876,
+      "reasoning_text": "Karar: continue_operation. Telemetri normal operasyonla uyumlu; arıza ve duruş riski düşük görünüyor.",
+      "row": 6,
+      "telemetry": [
+        0.5,
+        1.0,
+        0.003999999999999986,
+        0.08225500000000001,
+        0.656,
+        10.0
+      ],
+      "timestamp_sec": 15.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "downtime_minutes": 0.43806493282318115,
+      "failure_probability": 0.4355509281158447,
+      "features": {
+        "active_power_kw": 0.01775196,
+        "axis_acceleration_abs": 175.788,
+        "axis_position_error_mm": 2.0,
+        "axis_velocity_error": 0.3999999999999986,
+        "dc_bus_voltage_avg": 0.079,
+        "feedrate": 50.0,
+        "motor_current_a": 4.931500000000001,
+        "motor_current_peak_a": 328.0,
+        "sequence_number": 7.0,
+        "spindle_actual_velocity": 0.0,
+        "spindle_command_velocity": 0.0,
+        "spindle_current_feedback": 0.226,
+        "x_current_feedback": -5.7,
+        "y_current_feedback": -13.8,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Prep",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.8922,
+      "reasoning_text": "Karar: continue_operation. Telemetri normal operasyonla uyumlu; arıza ve duruş riski düşük görünüyor.",
+      "row": 5,
+      "telemetry": [
+        0.5,
+        2.0,
+        0.003999999999999986,
+        0.09863000000000001,
+        0.656,
+        10.0
+      ],
+      "timestamp_sec": 12.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "downtime_minutes": 0.4125741422176361,
+      "failure_probability": 0.4099196493625641,
+      "features": {
+        "active_power_kw": 0.015391070000000001,
+        "axis_acceleration_abs": 69.0,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.4010000000000057,
+        "dc_bus_voltage_avg": 0.07150000000000001,
+        "feedrate": 50.0,
+        "motor_current_a": 3.6050000000000004,
+        "motor_current_peak_a": 328.0,
+        "sequence_number": 7.0,
+        "spindle_actual_velocity": -0.001,
+        "spindle_command_velocity": 0.0,
+        "spindle_current_feedback": -0.18,
+        "x_current_feedback": -6.11,
+        "y_current_feedback": -8.13,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Prep",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.8828,
+      "reasoning_text": "Karar: continue_operation. Telemetri normal operasyonla uyumlu; arıza ve duruş riski düşük görünüyor.",
+      "row": 4,
+      "telemetry": [
+        0.5,
+        0.0,
+        0.004010000000000057,
+        0.07210000000000001,
+        0.656,
+        10.0
+      ],
+      "timestamp_sec": 9.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "downtime_minutes": 0.3696620464324951,
+      "failure_probability": 0.3673509359359741,
+      "features": {
+        "active_power_kw": 0.014760909999999999,
+        "axis_acceleration_abs": 44.188,
+        "axis_position_error_mm": 0.0,
+        "axis_velocity_error": 0.3000000000000007,
+        "dc_bus_voltage_avg": 0.06975,
+        "feedrate": 50.0,
+        "motor_current_a": 4.226,
+        "motor_current_peak_a": 328.0,
+        "sequence_number": 7.0,
+        "spindle_actual_velocity": 0.0,
+        "spindle_command_velocity": 0.0,
+        "spindle_current_feedback": 0.524,
+        "x_current_feedback": -8.59,
+        "y_current_feedback": -7.79,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Prep",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.8814,
+      "reasoning_text": "Karar: continue_operation. Telemetri normal operasyonla uyumlu; arıza ve duruş riski düşük görünüyor.",
+      "row": 3,
+      "telemetry": [
+        0.5,
+        0.0,
+        0.003000000000000007,
+        0.08452,
+        0.656,
+        10.0
+      ],
+      "timestamp_sec": 6.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "downtime_minutes": 0.3464716076850891,
+      "failure_probability": 0.34401050209999084,
+      "features": {
+        "active_power_kw": 0.017080526999999998,
+        "axis_acceleration_abs": 1812.25,
+        "axis_position_error_mm": 2.0,
+        "axis_velocity_error": 12.9,
+        "dc_bus_voltage_avg": 0.11675,
+        "feedrate": 50.0,
+        "motor_current_a": 6.422,
+        "motor_current_peak_a": 328.0,
+        "sequence_number": 4.0,
+        "spindle_actual_velocity": 0.0,
+        "spindle_command_velocity": 0.0,
+        "spindle_current_feedback": -0.288,
+        "x_current_feedback": -10.9,
+        "y_current_feedback": -14.5,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Prep",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.8317,
+      "reasoning_text": "Karar: continue_operation. Telemetri normal operasyonla uyumlu; arıza ve duruş riski düşük görünüyor.",
+      "row": 2,
+      "telemetry": [
+        0.5,
+        2.0,
+        0.129,
+        0.12844,
+        0.656,
+        10.0
+      ],
+      "timestamp_sec": 3.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 23,
+          "name": "manual_inspection",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "continue_operation",
       "confidence": 1.0,
@@ -135,10 +455,10 @@
   ],
   "interval_sec": 3.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 0.09,
-  "row": 1,
+  "progress_pct": 0.57,
+  "row": 6,
   "source_file": "experiment_01.csv",
   "state": "running",
   "total_rows": 1055,
-  "updated_at": "2026-06-18T11:36:14Z"
+  "updated_at": "2026-06-18T11:36:29Z"
 }
