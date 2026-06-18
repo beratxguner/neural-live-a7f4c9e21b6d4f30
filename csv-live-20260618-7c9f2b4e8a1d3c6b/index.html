@@ -74,7 +74,10 @@
     const fmt = (v, digits=3) => (v === null || v === undefined || Number.isNaN(Number(v))) ? "-" : Number(v).toFixed(digits);
     async function refresh() {
       try {
-        const res = await fetch("status.json?ts=" + Date.now(), { cache: "no-store" });
+        const parts = location.pathname.split("/").filter(Boolean);
+        const slug = parts[parts.length - 1] || "csv-live-20260618-7c9f2b4e8a1d3c6b";
+        const raw = `https://raw.githubusercontent.com/beratxguner/neural-live-a7f4c9e21b6d4f30/gh-pages/${slug}/status.json?ts=${Date.now()}`;
+        const res = await fetch(raw, { cache: "no-store" });
         if (!res.ok) throw new Error("status " + res.status);
         const data = await res.json();
         const c = data.current || {};
