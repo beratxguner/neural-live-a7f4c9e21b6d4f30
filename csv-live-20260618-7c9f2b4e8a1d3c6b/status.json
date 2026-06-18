@@ -8,32 +8,32 @@
     "downtime_minutes": 0.05,
     "failure_probability": 0.08,
     "features": {
-      "acceleration_tracking_error": 107.4898092,
-      "axis_acceleration_activity": 107.49,
-      "axis_position_error_mm": 0.5,
-      "axis_velocity_error": 0.10300000000000142,
-      "current_risk": 0.15536999999999998,
-      "dc_bus_signal_mean": 0.07525,
+      "acceleration_tracking_error": 38.0499046,
+      "axis_acceleration_activity": 38.05,
+      "axis_position_error_mm": 0.6000000000000085,
+      "axis_velocity_error": 0.20099999999998863,
+      "current_risk": 0.21824,
+      "dc_bus_signal_mean": 0.0835,
       "feed_rate_cmd": 50.0,
-      "local_risk": 0.0625,
-      "motion_risk": 0.0625,
-      "planned_axis_acceleration_activity": 0.0001908,
+      "local_risk": 0.07500000000000107,
+      "motion_risk": 0.07500000000000107,
+      "planned_axis_acceleration_activity": 0.0002862,
       "rapid_positioning": 1.0,
       "sequence_number": 7.0,
-      "servo_current_mean": 3.8842499999999998,
+      "servo_current_mean": 5.4559999999999995,
       "servo_output_current_max": 328.0,
-      "spindle_actual_velocity": 0.003,
+      "spindle_actual_velocity": 0.001,
       "spindle_command_velocity": 0.0,
-      "spindle_current_feedback": 0.117,
-      "spindle_load_pct": 11.65275,
-      "spindle_output_power_raw": 2.29e-07,
+      "spindle_current_feedback": 0.524,
+      "spindle_load_pct": 16.368,
+      "spindle_output_power_raw": 0.0,
       "spindle_output_voltage": 0.0,
-      "spindle_power_kw": 0.017090229,
-      "spindle_power_risk": 2.8624999999999996e-07,
+      "spindle_power_kw": 0.01884,
+      "spindle_power_risk": 0.0,
       "spindle_startup_transient": 0.0,
-      "vibration_proxy": 0.05971656066666666,
-      "x_current_feedback": -5.22,
-      "y_current_feedback": -10.2,
+      "vibration_proxy": 0.05000000000000071,
+      "x_current_feedback": -6.7,
+      "y_current_feedback": -14.6,
       "z_current_feedback": 0.0
     },
     "machining_process": "Prep",
@@ -41,17 +41,17 @@
     "model_raw_reasoning_class": "thermal",
     "reasoning_class": "normal",
     "reasoning_confidence": 0.9,
-    "reasoning_text": "Karar: continue_operation. Prep evresinde planlı eksen konumlanması var; pozisyon hatası 0.500 mm, hız hatası 0.103, vibration proxy 0.060. Bu ivme komutlu hareket olduğu için vibration_acoustic arızası sayılmadı.",
-    "row": 24,
+    "reasoning_text": "Karar: continue_operation. Prep evresinde planlı eksen konumlanması var; pozisyon hatası 0.600 mm, hız hatası 0.201, vibration proxy 0.050. Bu ivme komutlu hareket olduğu için vibration_acoustic arızası sayılmadı.",
+    "row": 25,
     "telemetry": [
-      0.11652749999999999,
-      0.0008545114499999999,
-      0.0625,
-      0.05,
-      0.0010300000000000142,
-      0.05971656066666666
+      0.16368,
+      0.0009419999999999999,
+      0.07500000000000107,
+      0.06000000000000085,
+      0.0020099999999998864,
+      0.05000000000000071
     ],
-    "timestamp_sec": 69.0,
+    "timestamp_sec": 72.0,
     "top_actions": [
       {
         "action": 0,
@@ -80,9 +80,88 @@
       }
     ]
   },
-  "elapsed_sec": 70.4,
-  "estimated_remaining_sec": 3093.0,
+  "elapsed_sec": 73.4,
+  "estimated_remaining_sec": 3090.0,
   "history": [
+    {
+      "action": "continue_operation",
+      "confidence": 1.0,
+      "context_guardrail": "planned_rapid_acceleration_not_vibration",
+      "downtime_minutes": 0.05,
+      "failure_probability": 0.08,
+      "features": {
+        "acceleration_tracking_error": 38.0499046,
+        "axis_acceleration_activity": 38.05,
+        "axis_position_error_mm": 0.6000000000000085,
+        "axis_velocity_error": 0.20099999999998863,
+        "current_risk": 0.21824,
+        "dc_bus_signal_mean": 0.0835,
+        "feed_rate_cmd": 50.0,
+        "local_risk": 0.07500000000000107,
+        "motion_risk": 0.07500000000000107,
+        "planned_axis_acceleration_activity": 0.0002862,
+        "rapid_positioning": 1.0,
+        "sequence_number": 7.0,
+        "servo_current_mean": 5.4559999999999995,
+        "servo_output_current_max": 328.0,
+        "spindle_actual_velocity": 0.001,
+        "spindle_command_velocity": 0.0,
+        "spindle_current_feedback": 0.524,
+        "spindle_load_pct": 16.368,
+        "spindle_output_power_raw": 0.0,
+        "spindle_output_voltage": 0.0,
+        "spindle_power_kw": 0.01884,
+        "spindle_power_risk": 0.0,
+        "spindle_startup_transient": 0.0,
+        "vibration_proxy": 0.05000000000000071,
+        "x_current_feedback": -6.7,
+        "y_current_feedback": -14.6,
+        "z_current_feedback": 0.0
+      },
+      "machining_process": "Prep",
+      "model_raw_action": "continue_operation",
+      "model_raw_reasoning_class": "thermal",
+      "reasoning_class": "normal",
+      "reasoning_confidence": 0.9,
+      "reasoning_text": "Karar: continue_operation. Prep evresinde planlı eksen konumlanması var; pozisyon hatası 0.600 mm, hız hatası 0.201, vibration proxy 0.050. Bu ivme komutlu hareket olduğu için vibration_acoustic arızası sayılmadı.",
+      "row": 25,
+      "telemetry": [
+        0.16368,
+        0.0009419999999999999,
+        0.07500000000000107,
+        0.06000000000000085,
+        0.0020099999999998864,
+        0.05000000000000071
+      ],
+      "timestamp_sec": 72.0,
+      "top_actions": [
+        {
+          "action": 0,
+          "name": "continue_operation",
+          "prob": 1.0
+        },
+        {
+          "action": 15,
+          "name": "check_coolant_system",
+          "prob": 0.0
+        },
+        {
+          "action": 3,
+          "name": "shutdown_component",
+          "prob": 0.0
+        },
+        {
+          "action": 2,
+          "name": "decrease_power",
+          "prob": 0.0
+        },
+        {
+          "action": 1,
+          "name": "increase_power",
+          "prob": 0.0
+        }
+      ]
+    },
     {
       "action": "continue_operation",
       "confidence": 1.0,
@@ -1982,10 +2061,10 @@
   ],
   "interval_sec": 3.0,
   "page_slug": "csv-live-20260618-7c9f2b4e8a1d3c6b",
-  "progress_pct": 2.27,
-  "row": 24,
+  "progress_pct": 2.37,
+  "row": 25,
   "source_file": "experiment_01.csv",
   "state": "running",
   "total_rows": 1055,
-  "updated_at": "2026-06-18T12:22:02Z"
+  "updated_at": "2026-06-18T12:22:05Z"
 }
