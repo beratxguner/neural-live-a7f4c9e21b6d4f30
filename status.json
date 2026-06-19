@@ -22,7 +22,7 @@
   "remaining_steps": 41606,
   "reward_loss": 0.02345850161930029,
   "shard": 6,
-  "source_updated_at": "2026-06-19T11:06:11Z",
+  "source_updated_at": "2026-06-19T11:07:17Z",
   "state": "running",
   "tag_loss": 0.0,
   "training_name": "general_machine_big_20260618_180316_general_machine_big_resume"
