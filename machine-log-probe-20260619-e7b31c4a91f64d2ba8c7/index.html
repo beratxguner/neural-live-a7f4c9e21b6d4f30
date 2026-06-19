@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine Log Probe</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --fg: #172033;
+      --muted: #657084;
+      --line: #d8dde8;
+      --soft: #f6f8fb;
+      --accent: #1769e0;
+      --ok: #087443;
+      --warn: #a65f00;
+      --bad: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+    }
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 32px 0 44px;
+    }
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      margin: 0 0 7px;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .status {
+      min-width: 156px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 10px 12px;
+      font-weight: 750;
+      text-align: center;
+    }
+    .workspace {
+      min-height: 58vh;
+      display: grid;
+      align-items: center;
+      padding: 26px 0;
+    }
+    .input-panel {
+      width: min(980px, 100%);
+      margin: 0 auto;
+    }
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 290px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--fg);
+      padding: 18px;
+      font: 14px/1.5 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      outline: none;
+    }
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(23, 105, 224, .12);
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    button {
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      min-height: 42px;
+      padding: 0 18px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+    button.secondary {
+      background: #fff;
+      color: var(--fg);
+      border-color: var(--line);
+    }
+    button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .metric, .section {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 14px;
+    }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+    .value {
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+    .value.ok { color: var(--ok); }
+    .value.warn { color: var(--warn); }
+    .value.bad { color: var(--bad); }
+    .sections {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #25314a;
+    }
+    .hidden { display: none; }
+    @media (max-width: 900px) {
+      header { align-items: flex-start; flex-direction: column; }
+      .status { width: 100%; }
+      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sections { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      main { width: min(100vw - 20px, 1180px); padding-top: 18px; }
+      .summary { grid-template-columns: 1fr; }
+      textarea { min-height: 250px; }
+      .actions { flex-direction: column; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Machine Log Probe</h1>
+        <div class="muted" id="endpointText">endpoint hazirlaniyor</div>
+      </div>
+      <div class="status" id="status">ready</div>
+    </header>
+
+    <section class="workspace">
+      <div class="input-panel">
+        <textarea id="input" spellcheck="false" placeholder='Makine logunu buraya yapistir'></textarea>
+        <div class="actions">
+          <button class="secondary" id="sampleBtn" type="button">Sample</button>
+          <button id="sendBtn" type="button">Gonder</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="output" class="hidden">
+      <div class="summary">
+        <div class="metric"><div class="label">Final Action</div><div class="value" id="finalAction">-</div></div>
+        <div class="metric"><div class="label">Severity</div><div class="value" id="severity">-</div></div>
+        <div class="metric"><div class="label">Risk</div><div class="value" id="risk">-</div></div>
+        <div class="metric"><div class="label">Latency</div><div class="value" id="latency">-</div></div>
+      </div>
+      <div class="sections">
+        <div class="section">
+          <div class="label">Operator Output</div>
+          <pre id="operatorOut">-</pre>
+        </div>
+        <div class="section">
+          <div class="label">Model Output</div>
+          <pre id="modelOut">-</pre>
+        </div>
+        <div class="section">
+          <div class="label">Interlock Events</div>
+          <pre id="interlockOut">-</pre>
+        </div>
+        <div class="section">
+          <div class="label">Formula Features</div>
+          <pre id="formulaOut">-</pre>
+        </div>
+        <div class="section">
+          <div class="label">Model Text</div>
+          <pre id="textOut">-</pre>
+        </div>
+        <div class="section">
+          <div class="label">Raw Response</div>
+          <pre id="rawOut">-</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const API_ENDPOINT = "https://bradley-something-hampton-configuring.trycloudflare.com/predict";
+    const input = document.getElementById("input");
+    const sendBtn = document.getElementById("sendBtn");
+    const sampleBtn = document.getElementById("sampleBtn");
+    const statusEl = document.getElementById("status");
+    const output = document.getElementById("output");
+    document.getElementById("endpointText").textContent = "operator adapter online";
+
+    const sample = {
+      machine_id: "web-test",
+      operating_state: "steady_load",
+      current_ratio: 1.35,
+      thermal_rise_ratio: 2.12,
+      vibration_ratio: 6.45,
+      acoustic_ratio: 7.95,
+      jerk_ratio: 5.85,
+      fatigue_index: 0.495
+    };
+
+    function pretty(value) {
+      return JSON.stringify(value, null, 2);
+    }
+
+    function parseInput(text) {
+      const trimmed = text.trim();
+      if (!trimmed) throw new Error("input bos");
+      try {
+        return JSON.parse(trimmed);
+      } catch (_) {
+        return trimmed;
+      }
+    }
+
+    function clsForSeverity(severity) {
+      if (severity === "critical") return "value bad";
+      if (severity === "warning" || severity === "watch") return "value warn";
+      return "value ok";
+    }
+
+    function setText(id, value) {
+      document.getElementById(id).textContent = value;
+    }
+
+    function render(data) {
+      const latest = data.latest || (data.results && data.results[data.results.length - 1]) || {};
+      const operator = latest.operator || {};
+      const prepared = latest.prepared || {};
+      const interlock = prepared.interlock || {};
+      const formulas = prepared.formula_features || {};
+      const model = latest.model || {};
+      const runtime = latest.runtime || {};
+      output.classList.remove("hidden");
+      setText("finalAction", operator.final_action || "-");
+      setText("severity", operator.severity || "-");
+      document.getElementById("severity").className = clsForSeverity(operator.severity);
+      setText("risk", Number.isFinite(Number(prepared.risk_score)) ? Number(prepared.risk_score).toFixed(4) : "-");
+      setText("latency", Number.isFinite(Number(runtime.latency_ms)) ? `${Number(runtime.latency_ms).toFixed(1)} ms` : "-");
+      setText("operatorOut", pretty(operator));
+      setText("modelOut", pretty(model));
+      setText("interlockOut", pretty(interlock.events || []));
+      setText("formulaOut", pretty(formulas));
+      setText("textOut", prepared.model_text || "-");
+      setText("rawOut", pretty(data));
+    }
+
+    async function send() {
+      try {
+        statusEl.textContent = "sending";
+        sendBtn.disabled = true;
+        const body = parseInput(input.value);
+        const response = await fetch(API_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+          cache: "no-store"
+        });
+        const text = await response.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (_) {
+          throw new Error(text.slice(0, 400) || `HTTP ${response.status}`);
+        }
+        if (!response.ok || data.error) {
+          throw new Error(data.error || `HTTP ${response.status}`);
+        }
+        render(data);
+        statusEl.textContent = "done";
+      } catch (err) {
+        output.classList.remove("hidden");
+        setText("rawOut", String(err.message || err));
+        statusEl.textContent = "error";
+      } finally {
+        sendBtn.disabled = false;
+      }
+    }
+
+    sampleBtn.addEventListener("click", () => {
+      input.value = pretty(sample);
+      input.focus();
+    });
+    sendBtn.addEventListener("click", send);
+  </script>
+</body>
+</html>
