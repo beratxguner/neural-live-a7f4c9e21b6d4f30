@@ -22,7 +22,7 @@
   "remaining_steps": 0,
   "reward_loss": 0.05070926505303159,
   "shard": 4,
-  "source_updated_at": "2026-07-06T23:38:26Z",
+  "source_updated_at": "2026-07-06T23:41:45Z",
   "state": "running",
   "tag_loss": 0.17181971964441092,
   "training_name": "agent_ua_20260621_072433_agent_ua"
