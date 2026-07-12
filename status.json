@@ -22,7 +22,7 @@
   "remaining_steps": 6784,
   "reward_loss": 2.656158946454525,
   "shard": 1,
-  "source_updated_at": "2026-07-12T21:20:22Z",
+  "source_updated_at": "2026-07-12T21:21:28Z",
   "state": "running",
   "tag_loss": 0.3216716843657196,
   "training_name": "20260712_205028_optimum_enghum_v1"
