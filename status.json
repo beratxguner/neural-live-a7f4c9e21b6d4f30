@@ -19,7 +19,7 @@
   "reasoning_loss": 0.2279422324617392,
   "remaining_steps": 0,
   "reward_loss": 0.011981335690734727,
-  "source_updated_at": "2026-07-16T14:35:54Z",
+  "source_updated_at": "2026-07-16T14:37:00Z",
   "state": "complete",
   "tag_loss": 0.11531876921915847,
   "training_name": "20260712_212807_optimum_enghum_v1",
